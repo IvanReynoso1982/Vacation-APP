@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Short Term Properties</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html"><img class="logo-small" src="images/IJDM logo full.png" alt="Rental"></a>
+            </div>
+            <ul class="nav-bar">
+                <li class="nav-button"><a href="/">Home</a></li>
+                <li class="nav-button"><a href="shortTerm">Short Term Properties</a></li>
+                <li class="nav-button"><a href="longTerm">Long Term Properties</a></li>
+                <li class="nav-button"><a href="reservation">Make a Reservation</a></li>
+                <li class="nav-button"><a href="about">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="headSection">
+            <h1>Find the Perfect Place to Stay</h1>
+            <p>Explore unique homes and experiences all over the world.<br />
+                Book your stay for up to a week. 
+            </p>
+            <table id="sTermProps" name="sTermProps">
+                <tr>
+                    <td>
+                        <img class="property6Img" src="images/rentals/New 2-Story Loft.jpg" width="75%" height="auto"/>
+                    </td>
+                    <td>
+                        <img class="property7Img" src="images/rentals/Private Bed and Bath.jpg" width="100%" height="auto"/>
+                    </td>
+                    <td>
+                        <img class="property8Img" src="images/rentals/Clean Spare Room.jpg" width="100%" height="auto"/>
+                    </td>
+                    <td>
+                        <img class="property9Img" src="images/rentals/Stone Cottage.jpg" width="100%" height="auto"/>
+                    </td>
+                    <td>
+                        <img class="property10Img" src="images/rentals/San Diego Guesthouse.jpg" width="100%" height="auto"/>
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <section class="search">
+            <h2>Search for Your Stay</h2>
+            <form action="http://localhost:8080/queryST" method="GET" target="hiddenframe">
+                <table>
+                    <tr>
+                        <td>
+                            <label for="price">Price per Night:</label>
+                            <input type="text" name="price" placeholder="Price">
+                        </td>
+                        <td>
+                            <label for="beds">Bedrooms:</label>
+                            <input type="number" name="beds" placeholder="Number of Bedrooms">
+                        </td>
+                        <td>
+                            <label for="baths">Bathrooms:</label>
+                            <input type="number" name="baths" placeholder="Number of Bathrooms">
+                        </td>
+                        <td>
+                            <label for="rating">Rating:</label>
+                            <input type="number" name="rating" placeholder="Rating" min="0" max="5">
+                        </td>
+                        <td>
+                            <label for="pets">Allows Pets</label><br>
+                            <input type="checkbox" id="pets" name="pets" value="yes">
+                            </td>
+                        <td>
+                            <button type="submit" class="btn">Search</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <br/>
+            <iframe class="hiddenframe" name="hiddenframe" style="height:700px"></script></iframe>
+        </section>
+    </main>
+    <script src="external.js"></script>
+</body>
+</html>

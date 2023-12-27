@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <script src="external.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .member-image {height: 100px; padding:5px 0px;}
+        .member-roles {padding-left: 10px;}
+    </style>
+</head>
+<body onload="setHandlers()">
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html"><img class="logo-small" src="images/IJDM logo full.png" alt="Rental"></a>
+            </div>
+            <ul class="nav-bar">
+                <li class="nav-button"><a href="/">Home</a></li>
+                <li class="nav-button"><a href="shortTerm">Short Term Properties</a></li>
+                <li class="nav-button"><a href="longTerm">Long Term Properties</a></li>
+                <li class="nav-button"><a href="reservation">Make a Reservation</a></li>
+                <li class="nav-button"><a href="about">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div style="display:flex; align-items: center;">
+            <span>
+                <h2>About IJDM Rentals</h2>
+                <br/>
+                <p id="ijdmAbout">IJDM Rentals was founded in 2023 by four classmates at National University. Initially started as a class project,
+                    IJDM Rentals is a small site to search for and reserve rental properties inspired by other sites such as 
+                    <a href="https://www.airbnb.com/">Airbnb</a> and <a href="https://www.vrbo.com/">Vrbo</a>. 
+                </p>
+            </span>
+            <img class="logo-full" src="images/IJDM logo icon.png" alt="Rental" style="height:200px">
+        </div>
+        <br/>
+        <h2>Meet the Team</h2>
+        <br/>
+        <div style="display:flex; align-items: center;">
+            <table style="align-items: left; width: 100%">
+                <tr>
+                    <td style="width:200px">
+                        <fieldset id="devTeam" class="devTeam">
+                            <legend>Choose your developer:</legend>
+                            <input id="member-Ivan" type="checkbox" name="member-Ivan">
+                            <label for="member-Ivan">Ivan</label><br />
+                            <input id="member-Justin" type="checkbox" name="radio">
+                            <label for="member-Justin">Justin</label><br />
+                            <input id="member-Dan" type="checkbox" name="radio">
+                            <label for="member-Dan">Dan</label><br />
+                            <input id="member-Michael" type="checkbox" name="radio">
+                            <label for="member-Michael">Michael</label><br />
+                        </fieldset>
+                    </td>
+                    <td>
+                        <fieldset class="devTeam">
+                            <legend>Choose your color:</legend>
+                            <input type="radio" id="red" name="color" value="red">
+                            <label for="red">Red</label><br />
+                            <input type="radio" id="green" name="color" value="green">
+                            <label for="green">Green</label><br />
+                            <input type="radio" id="blue" name="color" value="blue">
+                            <label for="blue">Blue</label><br />
+                        </fieldset>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="member-info-Ivan">
+            <div class="member-info-Ivan">  
+                <h3>Ivan Reynoso</h3>
+            </div>
+            <div class="member-info-Ivan" data-toggle-group="showIvan">
+                <img class=member-image src="images/Ivan's Pic.jpeg"/>
+                <span class="member-roles">
+                    <h4>Roles:</h4>
+                    <ul style="list-style: none;">
+                        <li><p>JavaScript Developer</p></li>
+                    </ul>
+                </span>       
+            </div>
+            <div class="member-info-Ivan">
+                <p>
+                    Student at National University studying Computer Science concentration in software engineering.
+                </p>
+                <input name="tacos" type="button" value="Click Me" onClick="alert('Hey! I love Tacos!');" />
+            </div>
+        </div>
+        <br/>
+        <div id="member-info-Justin">
+            <div class="member-info-Justin">
+                <h3>Justin Bras</h3>
+            </div>
+            <div class="member-info-Justin">
+                <img class=member-image src="images/justin.jpg"/>
+                <span class="member-roles">
+                    <h4>Roles:</h4>
+                    <ul style="list-style: none;">
+                        <li><p>HTML Developer</p></li>
+                        <li><p>Database Queries</p></li>
+                    </ul>
+                </span>        
+            </div>
+            <div class="member-info-Justin">
+                <p>
+                    Justin is a computer science student in San Diego, finishing his degree at National University.<br />
+                </p>
+            </div>
+        </div>
+        <br/>
+        <div id="member-info-Dan">
+            <div class="member-info-Dan">
+                <h3>Dan Daniels</h3>
+            </div>
+            <div class="member-info-Dan">
+                <img class=member-image src="images/Dan.jpg"/>
+                <span class="member-roles">
+                    <h4>Roles:</h4>
+                    <ul style="list-style: none;">
+                        <li><p>Node.js Routing</p></li>
+                    </ul>
+                </span>
+            </div>
+            <div class="member-info-Dan">
+                <p>
+                    Dan is a third-year Computer Science student from Florida. He has 13 months of class remaining before graduating from National University.  
+                    His long term goal is to specialize in front-end web development for a high-performing team.
+                </p>
+            </div>
+        </div>
+        <br/>
+        <div id="member-info-Michael">
+            <div class="member-info-Michael">
+                <h3>Michael Volkovitsch</h3>
+            </div>
+            <div class="member-info-Michael">
+                <img class=member-image src="images/michael pic.jpg"/>
+                <span class="member-roles">
+                    <h4>Roles:</h4>
+                    <ul style="list-style: none;">
+                        <li><p>CSS Styling</p></li>
+                        <li><p>Database Queries</p></li>
+                        <li><p>Documentation and Organization</p></li>
+                    </ul>
+                </span> 
+            </div>
+            <div class="member-info-Michael">
+                <p>Michael is a computer science student from Ohio. He started his bachelor's degree at Case Western Reserve University,
+                    and is briefly taking online classes at National University for transfer credit to finish his degree.
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

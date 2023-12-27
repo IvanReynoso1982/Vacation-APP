@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make a Reservation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html"><img class="logo-small" src="images/IJDM logo full.png" alt="Rental"></a>
+            </div>
+            <ul class="nav-bar">
+                <li class="nav-button"><a href="/">Home</a></li>
+                <li class="nav-button"><a href="shortTerm">Short Term Properties</a></li>
+                <li class="nav-button"><a href="longTerm">Long Term Properties</a></li>
+                <li class="nav-button"><a href="reservation">Make a Reservation</a></li>
+                <li class="nav-button"><a href="about">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="reservation">
+            <h2>Make a Reservation</h2>
+            <form action="http://localhost:8080/submitReservation" method="POST" target="hiddenframe">
+                <table>
+                    <tr>
+                        <td>
+                            <label for="Property ID">Property ID:</label>
+                            <input name="propertyId" type="text" placeholder="Property ID" required pattern="[0-9]*" title="Please enter a valid Property ID (numeric characters only)">
+                        <td>
+                            <label for="Name">Name:</label>
+                            <input name="custName" type="text" placeholder="Name" pattern="[a-zA-Z ]*" required>
+                        <td>
+                            <label for="email">Email Address:</label>
+                            <input name="email" type="email" placeholder="Email Address" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="Check-In Date">Check-In Date:</label>
+                            <input name="checkIn" type="date" placeholder="Check-in" required>
+                        </td>
+                        <td>
+                            <label for="Check-Out Date">Check-Out Date:</label>
+                            <input name="checkOut" type="date" placeholder="Check-out" required>
+                        </td>
+                        <td>
+                            <label for="Credit Card Number">Credit Card Number:</label>
+                            <input name="ccn" type="text" placeholder="Credit Card Number" required pattern="[0-9]{13,19}" title="Please enter a valid Credit Card Number (13 to 19 numeric digits)">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" colspan="2">
+                            <label for="Optional Notes">Optional Notes:</label>
+                            <textarea name="notes" placeholder="Optional Notes" maxlength="256" rows="4" cols="50"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <button type="submit" class="btn">Submit</button>
+                            <button type="button" class="btn" onclick="clearForm()">Clear</button>
+                        </td>
+                    </tr>
+                </table>
+                <p id="submissionText"></p>
+                <iframe class="hiddenframe" name="hiddenframe"></iframe>
+            </form>
+        </section>
+    </main>
+    <script>
+            const form = document.querySelector('form');
+            const propertyIdInput = document.querySelector('input[placeholder="Property ID"]');
+            const creditCardInput = document.querySelector('input[placeholder="Credit Card Number"]');
+            form.addEventListener('submit', function (event) {
+                console.log("verifying");
+                event.preventDefault();
+                if (!validatePropertyId(propertyIdInput.value)) {
+                    alert('Please enter a valid Property ID (numeric characters only)');
+                    return;
+                }
+                if (!validateCreditCard(creditCardInput.value)) {
+                    alert('Please enter a valid Credit Card Number (13 to 19 numeric digits)');
+
+                    return;
+                }
+
+                this.submit();
+                document.getElementById("submissionText").innerText="Reservation Complete"
+            });
+            function validatePropertyId(propertyId) {
+                const pattern = /^[0-9]*$/;
+                return pattern.test(propertyId);
+            }
+            function validateCreditCard(creditCardNumber) {
+                const pattern = /^[0-9]{13,19}$/;
+                return pattern.test(creditCardNumber);
+            }
+        </script>
+    </body>
+    </html>
+    <script src="external.js"></script>
+</body>
+</html>
